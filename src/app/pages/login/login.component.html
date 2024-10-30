@@ -2,4 +2,25 @@
     title="Login into your account"
     primaryBtn="Login Now"
     secondaryBtn="Singup Now"
-></app-default-login-layout>
+>
+    <form [formGroup]="loginForm">
+        <app-primary-input 
+            formName="email"
+            type="email"
+            label="E-mail"
+            placeholder="teste123@gmail.com"
+        >
+            <img src="/assets/images/email.svg" alt="">
+
+        </app-primary-input>
+
+        <app-primary-input 
+            formName="password"
+            type="password"
+            label="Your Password"
+        >
+        <img src="/assets/images/password.svg" alt="">
+
+    </app-primary-input>
+    </form>
+</app-default-login-layout>
