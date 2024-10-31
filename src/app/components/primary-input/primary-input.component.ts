@@ -17,24 +17,31 @@ type InputTypes = "text" | "email" | "password"
   templateUrl: './primary-input.component.html',
   styleUrl: './primary-input.component.scss'
 })
-export class PrimaryInputComponent implements ControlValueAccessor{
-  writeValue(obj: any): void {
-    throw new Error('Method not implemented.');
-  }
-  registerOnChange(fn: any): void {
-    throw new Error('Method not implemented.');
-  }
-  registerOnTouched(fn: any): void {
-    throw new Error('Method not implemented.');
-  }
-  setDisabledState?(isDisabled: boolean): void {
-    throw new Error('Method not implemented.');
-  }
 
+export class PrimaryInputComponent implements ControlValueAccessor{
   @Input()type: InputTypes = "text";
-  @Input()formName: string = "";
   @Input()placeholder: string = "";
   @Input()label: string = "";
+  @Input()inputName: string = "";
 
-  
+  value: string = ""
+  onChange: any = () => ""
+  onTouched: any = () => {}
+
+  onInput(event: Event) {
+    const value = (event.target as HTMLInputElement).value
+    this.onChange(value)
+  }
+
+  writeValue(value: any): void {
+    this.value = value
+  }
+
+  registerOnChange(fn: any): void {
+    this.onChange = fn
+  }
+
+  registerOnTouched(fn: any): void {
+    this.onTouched = fn;
+  }
 }

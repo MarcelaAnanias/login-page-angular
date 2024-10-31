@@ -4,13 +4,13 @@
         <h2>{{title}}</h2>
         <ng-content></ng-content>
         <div class="btn-wrapper">
-            <button class="btn-primary">{{primaryBtn}}</button>
+            <button class="btn-primary" (click)="submit()">{{primaryBtn}}</button>
             <div class="divider">
                 <div></div>
                 <span>OR</span>
                 <div></div>
             </div>
-            <button class="btn-secondary">{{secondaryBtn}}</button>
+            <button class="btn-secondary" (click)="navegator()">{{secondaryBtn}}</button>
         </div>
     </section>
     <section class="main-section">

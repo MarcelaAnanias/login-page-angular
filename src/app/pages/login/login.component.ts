@@ -23,4 +23,12 @@ export class LoginComponent {
       password: new FormControl('', [Validators.required, Validators.minLength(8)])
     })
   }
+
+  submit(){
+    console.log(this.loginForm.value)
+  }
+
+  navegator(){
+    console.log(this.loginForm.value)
+  }
 }

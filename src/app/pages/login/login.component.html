@@ -1,11 +1,14 @@
 <app-default-login-layout
-    title="Login into your account"
+    title="Happening now"
     primaryBtn="Login Now"
     secondaryBtn="Singup Now"
+    (submit)="submit()"
+    (navegator)="navegator()"
 >
     <form [formGroup]="loginForm">
         <app-primary-input 
-            formName="email"
+            formControlName="email"
+            inputName="email"
             type="email"
             label="E-mail"
             placeholder="teste123@gmail.com"
@@ -15,12 +18,13 @@
         </app-primary-input>
 
         <app-primary-input 
-            formName="password"
+            formControlName="password"
+            inputName="password"
             type="password"
             label="Your Password"
         >
         <img src="/assets/images/password.svg" alt="">
-
     </app-primary-input>
+    <span>Forget Password?</span>
     </form>
 </app-default-login-layout>
