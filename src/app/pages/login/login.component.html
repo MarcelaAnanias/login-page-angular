@@ -1,8 +1,10 @@
 <app-default-login-layout
-    title="Happening now"
+    [showImage]="showImage"
+    title="Happening Now"
     primaryBtn="Login Now"
     secondaryBtn="Singup Now"
     (submit)="submit()"
+    [disablePrimaryBtn]="!loginForm.valid"
     (navegator)="navegator()"
 >
     <form [formGroup]="loginForm">

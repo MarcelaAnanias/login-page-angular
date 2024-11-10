@@ -1,10 +1,15 @@
 <main>
     <section class="form-section"> 
-        <img src="/assets/images/twitter-logo.svg" alt="">
+        <img *ngIf="showImage" src="/assets/images/twitter-logo.svg" alt="">
         <h2>{{title}}</h2>
         <ng-content></ng-content>
         <div class="btn-wrapper">
-            <button class="btn-primary" (click)="submit()">{{primaryBtn}}</button>
+            <button class="btn-primary" 
+            (click)="submit()"
+            [disabled]= "disablePrimaryBtn"
+            >
+            {{primaryBtn}}
+            </button>
             <div class="divider">
                 <div></div>
                 <span>OR</span>

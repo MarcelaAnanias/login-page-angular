@@ -1,0 +1,48 @@
+<app-default-login-layout
+    title="Get Started Now"
+    primaryBtn="Singup Now"
+    secondaryBtn="Login Now"
+    (submit)="submit()"
+    [disablePrimaryBtn]="!singupForm.valid"
+    (navegator)="navegator()"
+>
+<form [formGroup]="singupForm">
+    <app-primary-input 
+        formControlName="name"
+        inputName="name"
+        type="text"
+        label="Name"
+        placeholder="Enter Your Full Name"
+    >
+        <img src="/assets/images/email.svg" alt="">
+
+    </app-primary-input>
+    <app-primary-input 
+        formControlName="email"
+        inputName="email"
+        type="email"
+        label="E-mail"
+        placeholder="teste123@gmail.com"
+    >
+        <img src="/assets/images/email.svg" alt="">
+
+    </app-primary-input>
+
+    <app-primary-input 
+        formControlName="password"
+        inputName="password"
+        type="password"
+        label="Your Password"
+    >
+    <img src="/assets/images/password.svg" alt="">
+</app-primary-input>
+    <app-primary-input 
+        formControlName="confirmpassword"
+        inputName="password"
+        type="password"
+        label="Confirm Your Password"
+    >
+    <img src="/assets/images/password.svg" alt="">
+</app-primary-input>
+</form>
+</app-default-login-layout>
